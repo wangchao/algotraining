@@ -11,6 +11,7 @@ int uniquePaths(int m, int n){
 	int col = 0;
 	int dots = m*n;
 	int *f;
+	int result;
 
 	if (m == 0 && n == 0) return 0;
 
@@ -30,7 +31,9 @@ int uniquePaths(int m, int n){
 		}
 	}
 
-	return f[m*n-1];
+	result = f[m*n-1];
+	free(f);
+	return result;
 }
 
 
